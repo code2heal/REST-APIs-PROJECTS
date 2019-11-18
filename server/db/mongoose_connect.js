@@ -6,6 +6,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/allpurpose', {useNewUrlParser: true});
 
 
-exports.modules = {
+module.exports = {
   mongoose // ES6 Since the properties and the variables have thesame name
 };

@@ -24,8 +24,8 @@ var ana101 = new courses({
 
   ana101.save().then((doc)=>{
   res.send(doc);
-  }, (error)=>{
-  res.status(400).send(error);
+  }, (e)=>{
+  res.status(400).send(e);
 
   client.close();
   });
@@ -35,3 +35,5 @@ var ana101 = new courses({
 app.listen(3000, ()=>{
   console.log('App Started On Port 3000');
 });
+
+module.exports = {app}; // using ES6 Notations
