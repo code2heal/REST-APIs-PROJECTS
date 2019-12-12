@@ -19,6 +19,4 @@ const userDetails = new Schema({
 const courses = mongoose.model('courses', userDetails);
 
 
-module.exports = {
-  courses
-};
+module.exports = {courses};

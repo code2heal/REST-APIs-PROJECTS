@@ -3,42 +3,20 @@
 var mongoose = require('mongoose')
 
 
-// const Schema = mongoose.Schema;
+ const Schema = mongoose.Schema;
 
-const UserDetails = mongoose.model({
+const userSchema = new Schema({
 
-  tutor:{type: String},
-  duration: {type: String},
-  rating: {type: Number},
-  certified: {type: Boolean},
-  date: {type: Date, default: Date.now}
+  firstname:{type: String},
+  lastname:{type: String},
+  age:{type: Number},
+  phone_number:{type: String},
+  favourite_quote:{type: String},
+  life_ambition:{type: String}
 });
 
 //Define your collection
-const courses = mongoose.model('courses', userDetails);
+const studentDetails = mongoose.model('studentdetails', userSchema);
 
-// var mongoose = require('mongoose');
-//
-// var Todo = mongoose.model('Todo', {
-//   text: {
-//     type: String,
-//     required: true,
-//     minlength: 1,
-//     trim: true
-//   },
-//   completed: {
-//     type: Boolean,
-//     default: false
-//   },
-//   completedAt: {
-//     type: Number,
-//     default: null
-//   }
-// });
-//
-// module.exports = {Todo};
-//
-//
-// exports.modules = {
-  courses
-};
+
+module.exports = {studentDetails};
