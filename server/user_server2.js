@@ -4,10 +4,6 @@ var bodyParser = require('body-parser');
 var {mongoose} = require('./db/mongoose_connect.js'); //create a connection to mongose and create a db
 var {studentDetails} = require('./models/user_data.js'); // create a collection /models
 
-const {MongoClient, ObjectID} = require('mongodb');
-
-var obj = new ObjectID();
-
 
 var app = express(); // start the express server
 
@@ -48,25 +44,6 @@ app.get('/details', (req, res)=>{
   });
 
 
-});
-
-
-app.get('/details/:id', (req, res) => {
-  var id = req.params.id;
-
-  if (!ObjectID.isValid(id)) {
-    return res.status(404).send();
-  }
-
-  studentDetails.findById(id).then((details) => {
-    if (!details) {
-      return res.status(404).send();
-    }
-
-    res.send({details});
-  }).catch((e) => {
-    res.status(400).send();
-  });
 });
 
 app.listen(3000, ()=>{
